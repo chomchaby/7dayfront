@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="homestyle.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Home</title>
   </head>
 
@@ -36,16 +36,83 @@
           </td>
         </tr>
         <tr id="row2">
-          <td class="col" id="col1"><span class="seat">Occupied</span></td>
-          <td class="col" id="col2"><span class="seat">Occupied</span></td>
-          <td class="col" id="col3"><span class="seat">Occupied</span></td>
+          <td class="col" id="col1">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row2-col1-cap">A Simple Popup!</span>
+            </div>
+          </td>
+          <td class="col" id="col2">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row2-col2-cap">A Simple Popup!</span>
+            </div>
+          </td>
+          <td class="col" id="col3">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row2-col3-cap">A Simple Popup!</span>
+            </div>
+          </td>
         </tr>
         <tr id="row3">
-          <td class="col" id="col1"><span class="seat">Occupied</span></td>
-          <td class="col" id="col2"><span class="seat">Occupied</span></td>
-          <td class="col" id="col3"><span class="seat">Occupied</span></td>
+          <td class="col" id="col1">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row3-col1-cap">A Simple Popup!</span>
+            </div>
+          </td>
+          <td class="col" id="col2">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row3-col2-cap">A Simple Popup!</span>
+            </div>
+          </td>
+          <td class="col" id="col3">
+            <div class="seat">
+              Occupied
+              <span class="popuptext" id="row3-col3-cap">A Simple Popup!</span>
+            </div>
+          </td>
         </tr>
       </table>
+      <button id="floor-btn">first floor</button>
+      <button id="caption-btn">caption</button>
+    </section>
+
+    <section>
+      <div class="box">
+        <a href="#divOne" class="button">จองที่ใหม่</a>
+      </div>
+
+      <div class="overlay" id="divOne">
+        <div class="wrapper">
+          <h2>จองที่ใหม่</h2>
+          <a href="#" class="close">&times;</a>
+          <div class="content">
+            <div class="container">
+              <form>
+                <label>First Name</label>
+                <input type="text" placeholder="your first name" />
+                <label>Last Name</label>
+                <input type="text" placeholder="your last name" />
+                <label>Student ID</label>
+                <textarea placeholder="your student ID"></textarea>
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="box">
+        <button class="button">ร้อง(เรียน)ข้ามห้องสมุด</button>
+      </div>
+      <div class="box">
+        <button class="button">เลี้ยงเค้าหน่อย~</button>
+      </div>
     </section>
 
     <script type="module" src="script.js"></script>
