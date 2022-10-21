@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+body{
+    font-family: 'Inter', sans-serif;
+    background:white;
+}
+
+section{
+    margin: 20px 0;
+}
+
+#page-name{
+    font-size: 4em;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    color:black;
+}
+
+#status-table {
+    width: 100%;
+    text-align: center;
+}
+
+.seat {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.seat .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+/* Popup arrow */
+.seat .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class - hide and show the popup */
+.seat .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+
+
+/* above is not used */
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+
+
+.section-title{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5px;
+    color:#EAECEE;
+}
+.section-subtitle{
+    font-size: 0.8em;
+    font-weight: lighter;
+    line-height: 80%;
+}
+
+#course-edit-table,#main-table,#second-table{
+    padding: 0;
+    width: 100%;
+    background: #F7F9F6;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.1);
+    border-collapse: collapse;
+    overflow: hidden;
+}
+#course-edit-table,#main-table > thead{
+    background: #F7F9F6;
+    /*color: white;*/
+}
+
+#second-table > thead{
+    background: #555;
+    color: white;
+}
+
+#status-table > thead > tr > th,#second-table > thead > tr > th{
+    font-weight: lighter;
+    text-align: left;
+}
+#status-table td,#main-table th,#second-table td,#second-table th{
+    padding: 10px 10px;
+    font-weight: lighter;
+}
+ 
+#task-to-add, #course-to-add, #deadline-to-add,#course-to-edit{
+    padding:5px 10px;
+    border-radius: 8px;
+    border:1px solid #AAA;
+}
+  
+.task-done{
+    padding:5px 10px;
+    border-radius: 8px;
+    background: #D2F8B6;
+}
+.task-late{
+    padding:5px 10px;
+    border-radius: 8px;
+    background:#FADBD8;
+}
+.task-less-than-1-hour{
+    padding:5px 10px;
+    border-radius: 8px;
+    background:#FCF3CF ;
+}
+.submit-row,.delete-row,.done-row, #add-newrow, #add-course-option, #remove-course-option{
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid #AAA;
+    background: white;
+    width: auto;
+    cursor: pointer;
+}
+.submit-row:hover,.delete-row:hover,.done-row:hover, #add-newrow:hover, #add-course-option:hover, #remove-course-option:hover{
+    background: rgb(255, 200, 105);
+    color:white;
+}
