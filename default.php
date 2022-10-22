@@ -1,1 +1,0 @@
-{"seatStatus":"red"}

@@ -1,0 +1,25 @@
+{"seatStatus":{
+    "occupied":[
+        {"seatId":"row1-col2",
+            "user":"งึบงับ",
+            "caption":"งึบงึบงับงับ"
+        }
+        ,{"seatId":"row1-col3",
+            "user":"Punchxzshe",
+            "caption":"ปั๊นสิบอร่อยมากก"
+        }
+        ,{"seatId":"row2-col1",
+            "user":"VT",
+            "caption":"go to the moon.."
+        },
+        {"seatId":"row3-col1",
+            "user":"NaThatHai",
+            "caption":"อยากกินเป็ดพะโล้ล้"
+        },
+        {"seatId":"row3-col2",
+            "user":"chomchaby",
+            "caption":""
+        }
+    ]
+}
+}

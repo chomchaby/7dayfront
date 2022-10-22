@@ -19,9 +19,18 @@ section{
     padding: 20px;
 }
 
-#status-table {
+.status-table {
     width: 50%;
     text-align: center;
+}
+
+.book-seat {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
 }
 
 .seat {
@@ -81,7 +90,7 @@ section{
     to {opacity:1 ;}
   }
 
-/* for pop up resevation */
+/* for pop up prototype*/
 .box{
     text-align: center;
 }
