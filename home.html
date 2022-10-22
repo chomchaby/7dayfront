@@ -10,11 +10,11 @@
 
   <body>
     <section>
-      <h1 id="page-name">Home</h1>
+      <div class="header">Home</div>
     </section>
 
     <section>
-      <table class="status-table">
+      <table class="seat-table">
         <tr id="row1">
           <td class="col" id="col1">
             <div class="seat" id="row1-col1">
@@ -67,13 +67,13 @@
           </td>
         </tr>
       </table>
-      <button id="floor-btn">first floor</button>
+      <!-- <button id="floor-btn">first floor</button> -->
       <button id="caption-btn">caption</button>
     </section>
 
-    <section>
-      <div class="box">
-        <a href="#divOne" class="button">จองที่ใหม่</a>
+    <!-- <section>
+      <div class="boxx">
+        <a href="#divOne" class="buttonn">จองที่ใหม่</a>
       </div>
 
       <div class="overlay" id="divOne">
@@ -95,17 +95,24 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section>
-      <div class="box">
-        <button class="button">ร้อง(เรียน)ข้ามห้องสมุด</button>
-      </div>
-      <div class="box">
-        <button class="button">เลี้ยงเค้าหน่อย~</button>
+      <div class="footer">
+        <!-- <button class="cus-button">Book</button> -->
+        <!-- <button class="cus-button">Leave</button> -->
+        <form class="cus-button" action="book-1.html">
+          <input type="submit" value="Book" />
+        </form>
+        <form class="cus-button" action="">
+          <input type="submit" value="Leave" />
+        </form>
+        <button class="menu-button">My Account</button>
+        <button class="menu-button">Issue</button>
+        <button class="menu-button">Charity</button>
       </div>
     </section>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script-home.js"></script>
   </body>
 </html>

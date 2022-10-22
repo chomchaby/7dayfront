@@ -3,6 +3,7 @@ const statusSeats = document.querySelectorAll('.seat');
 const bookSeats = document.querySelectorAll('.book-seat');
 var showCaption = false;
 
+
 var occupiedSeat;
 function startLiveUpdate() {
   setInterval(function() {
@@ -74,16 +75,17 @@ function toggleCaption() {
   }
 };
 
-document.getElementById("floor-btn").addEventListener('click',toggleFloor);
-function toggleFloor() {
-  var btn = document.getElementById("floor-btn");
-  if (btn.innerHTML == 'first floor') {
-    btn.innerHTML = 'second floor';
-  } else {
-    btn.innerHTML = 'first floor';
-  }
-};
 
+
+// document.getElementById("floor-btn").addEventListener('click',toggleFloor);
+// function toggleFloor() {
+//   var btn = document.getElementById("floor-btn");
+//   if (btn.innerHTML == 'first floor') {
+//     btn.innerHTML = 'second floor';
+//   } else {
+//     btn.innerHTML = 'first floor';
+//   }
+// };
 
 // window.addEventListener('DOMContentLoaded', (event) => {
 //     var els = document.querySelectorAll('.seat');

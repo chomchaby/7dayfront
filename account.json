@@ -1,13 +1,21 @@
 {
     "studentId": "6431308021",
     "userId" : "#9999",
-    "friends":[
+    "friend":[
         {
-            "studentId": "6431398021",
+            "studentId": "0000",
             "userId" : "#9989"
         },
         {
-            "studentId": "6431385021",
+            "studentId": "1111",
+            "userId" : "#9998"
+        },
+        {
+            "studentId": "2222",
+            "userId" : "#9998"
+        },
+        {
+            "studentId": "3333",
             "userId" : "#9998"
         }
     ],

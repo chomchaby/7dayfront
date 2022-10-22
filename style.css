@@ -6,26 +6,63 @@ body{
 }
 
 section{
-    margin: 20px 0;
+    margin: 0px 0;
 }
-
-#page-name{
-    font-size: 4em;
+.header{
+    font-size: 3em;
     font-weight: bold;
     margin: 0;
     text-align: center;
     color:black;
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 10px;
 }
 
-.status-table {
-    width: 50%;
+.footer {
+    background-color: #f1f1f1;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+.cus-button{
+    /* font-size: 1em;
+    height: 45px;
+    width: 45%; */
+    /* padding: 10px 25px; */
+    /* color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #403e3d;
+    border-radius: 50px; */
+
+}
+.menu-button{
+    font-size: 14px;
+    height: 45px;
+    width: 32%;
+    /* padding: 10px 25px; */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #403e3d;
+    border-radius: 50px;
+    margin-top: 10px;
+
+}
+.seat-table {
+    width: 100%;
     text-align: center;
 }
 
 .book-seat {
-    height: 25px;
+    height: 5px;
     width: 25px;
     border-radius: 50%;
     display: inline-block;
@@ -91,10 +128,10 @@ section{
   }
 
 /* for pop up prototype*/
-.box{
+.boxx{
     text-align: center;
 }
-.button{
+.buttonn{
     font-size: 1em;
     padding: 15px 35px;
     color: #fff;
