@@ -27,15 +27,23 @@ function createSelectedFriendTable() {
     table.innerHTML = '';
     for (const friend of selectedFriend) {
         table.innerHTML += `
-        <tr id='${"selected-friend-"+friend}'>
+        <tr id='${"selected-"+friend}'>
             <td>${friend}</td>
-            <td><button class="delete-row" onClick="deleteSelectedFriend('${"selected-friend-"+friend}');">Delete</button></td>
+            <td><button class="del-row-btn" id='${"selected-"+friend}' >Delete</button></td>
         </tr>
         `
     }
-}
-function deleteSelectedFriend(item) {
-    document.getElementById(item).remove();
+    var btn = document.querySelectorAll(".del-row-btn");
+    btn.forEach( b=> {
+        let friend = b.id.slice(9)
+        b.addEventListener('click', function handleClick(event) {
+                deleteSelectedFriend(b.id);
+                selectedFriend.delete(friend);
+          });
+    });
 }
 
-
+function deleteSelectedFriend(id) {
+    var element = document.getElementById(id);
+    element.parentNode.removeChild(element);
+}
