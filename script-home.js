@@ -1,3 +1,22 @@
+function generateZoneCMap() {
+  var table = document.getElementById('zone-C-map');
+  for (let r = 1; r <= 8; r++) {
+    var idrow = "r" + r;
+    table.innerHTML += `<tr id='${idrow}'></tr>`
+    var item  = document.getElementById(idrow);
+    for (let c=1; c<=8; c++) {
+      let idcol = "c" + c;
+      let idseat = "zone-C-"+idrow + "-"+ idcol;
+      item.innerHTML += `<td id='${idcol}'>
+                          <div class="seat" id='${idseat}'>
+                            <span class="popuptext"></span>
+                          </div>
+                        </td>`
+    }
+  }
+}
+generateZoneCMap();
+
 const allSeats = document.querySelectorAll('.seat ,.book-seat');
 const statusSeats = document.querySelectorAll('.seat');
 const bookSeats = document.querySelectorAll('.book-seat');
@@ -74,7 +93,6 @@ function toggleCaption() {
     showCaption = false;
   }
 };
-
 
 
 // document.getElementById("floor-btn").addEventListener('click',toggleFloor);
