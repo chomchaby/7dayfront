@@ -1,0 +1,31 @@
+body{
+    margin : 0%;
+    padding : 0%;
+    background: linear-gradient(to right, #00d7ff, #72ffff);
+}
+.container{
+    text-align: center;
+}
+h1{
+    font-size: 3em;
+    margin: 1% 0% -3% 0%
+}
+p{
+    font-family: 7-Segment;
+    src:url(7-Segment.ttf);
+    font-size: 2.1em;
+    margin-bottom: 0;
+    margin: 2;
+    height: 10;
+}
+
+h2{
+    font-size: 2.5em;
+    align-items: center;
+    justify-content: center;
+    margin: 1;
+    margin-bottom: -4%;
+    height: 1;
+
+
+}
