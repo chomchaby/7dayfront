@@ -77,12 +77,32 @@ function generateZoneCMap() {
     currentSelectedSeat = pendingBookingSeat.get(currentPerson);
   }
   
+  function updatePendingSeat() {
+    // store in pending seat map
+    if (currentSelectedSeat!=null) {
+      pendingBookingSeat.set(currentPerson,currentSelectedSeat);
+    }
+    else {
+      pendingBookingSeat.delete(currentPerson);
+    }
+  }
+  function isOccupied(id) {
+    for (var i = 0; i < redSeatArray.length; i++) {
+        if (redSeatArray[i] == id) return true;
+    }
+    return false;
+  }
+  function isFriendSeat(id) {
+    for (const [key, value] of pendingBookingSeat) {
+      if (value==id) return true;
+    }
+    return false;
+  }
   function addChangeColorWhenClick() {
     bookSeats.forEach(seat => {
       seat.addEventListener('click', function handleClick(event) {
         
         // select occupied seat, select friend seat -> return
-        console.log(isOccupied(seat.id));
         if (isOccupied(seat.id) || isFriendSeat(seat.id)) {
         }
 
@@ -106,18 +126,6 @@ function generateZoneCMap() {
       });
     });
   }
-  function isOccupied(id) {
-    for (var i = 0; i < redSeatArray.length; i++) {
-        if (redSeatArray[i] == id) return true;
-    }
-    return false;
-  }
-  function isFriendSeat(id) {
-    for (const [key, value] of pendingBookingSeat) {
-      if (value==id) return true;
-    }
-    return false;
-  }
   
   function addPreviousNextAction() {
     document.getElementById("previous-friend").addEventListener('click',function() {
@@ -135,15 +143,15 @@ function generateZoneCMap() {
       updateSeatColor();
     });
   }
-  
-  function updatePendingSeat() {
-    // store in pending seat map
-    if (currentSelectedSeat!=null) {
-      pendingBookingSeat.set(currentPerson,currentSelectedSeat);
-    }
-    else {
-      pendingBookingSeat.delete(currentPerson);
-    }
+  function addSubmitBookingAction() {
+    const form = document.getElementById('form-submit-booking');
+    form.addEventListener('submit',function(e) {
+      if (pendingBookingSeat.size==0) return;
+      e.preventDefault();
+      const json = JSON.stringify(Object.fromEntries(pendingBookingSeat));
+      localStorage.setItem('selected-seat-map',json);
+      window.location.href = "index-book-3.html";
+    })
   }
   
   // ------------ coding begin here -------------------- //
@@ -151,15 +159,14 @@ function generateZoneCMap() {
   // to create full map
     generateZoneCMap();
   
-    // set default value
+  // set default value
     bookSeats = document.querySelectorAll('.book-seat');
+    // receive friend-list from previous page, convert to array 
+    selectedFriendArray = JSON.parse(localStorage.getItem('selected-friend-set'));
+    indexOfCurrentSelectedFriend = 0;
     
-    // booking step 2 - select seat (id : contain-map, book-map)
-  
-      // receive friend-list from previous page, convert to array 
-      selectedFriendArray = JSON.parse(localStorage.getItem('selected-friend-set'));
-      indexOfCurrentSelectedFriend = 0;
-  
+  // booking step 2 - select seat (id : contain-map, book-map)
+
       // update seat and person first time
       updateCurrentPerson();
       updateSeatColor();
@@ -167,4 +174,5 @@ function generateZoneCMap() {
       // add click event for booking
       addChangeColorWhenClick();
       addPreviousNextAction();
+      addSubmitBookingAction();
   

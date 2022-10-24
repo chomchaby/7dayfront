@@ -92,7 +92,7 @@ function generateZoneCMap() {
     }
   };
   
-  // ------------ coding begin here -------------------- //
+  // ------------ coding begins here -------------------- //
 
     // function to be done first
     generateZoneCMap();

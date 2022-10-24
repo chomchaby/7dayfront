@@ -67,7 +67,6 @@
     var selectedFriendSet = new Set();
     updateFriendList();
     document.getElementById('select-friend-btn').addEventListener('click',selectFriend);
-  
     addContinueLoadFriendToNextHTML(); 
   
   
