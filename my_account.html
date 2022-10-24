@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-by-naz.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">My Account</div>
+    <div class="subheading-text">Nathathai Aungudomsin</div>
+    <div class="subheading-text">6430204221</div>
+
+    <div class="row">
+      <div class="seat-display-button">5A</div>
+    </div>
+
+    <div class="subheading-text">My Seat: 5A</div>
+    <div class="subheading-text">My Caption:</div>
+    <input
+      type="text"
+      id="myCaption"
+      value="want someone to joy playing indy game sky"
+    /><br />
+
+    <button onclick="disableTxt()">save</button>
+    <button onclick="undisableTxt()">change</button>
+
+    <script>
+      function disableTxt() {
+        document.getElementById("myCaption").disabled = true;
+      }
+
+      function undisableTxt() {
+        document.getElementById("myCaption").disabled = false;
+      }
+    </script>
+
+    <form class="buttonn" action="book-2.html">
+      <input type="submit" value="Change Seat" />
+    </form>
+    <form class="buttonn" action="friend_list.html">
+      <input type="submit" value="Friend List" />
+    </form>
+
+    <script type="module" src="script-book-1.js"></script>
+  </body>
+</html>

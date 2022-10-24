@@ -1,0 +1,20 @@
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1019;
+}
+.container img{
+    width: 1019px;
+    height:635px;
+}
+.container .btn{
+    position:absolute;
+    top: 318px;
+    left: 508px;
+    background-color: #E1E1E1;
+    border-color: #787878;
+    border-width: 2px;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+}
