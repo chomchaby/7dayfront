@@ -8,12 +8,12 @@
     <title>Home</title>
   </head>
 
-  <body>
+  <body id="contain-map">
     <section>
       <div class="header">Home</div>
     </section>
 
-    <section class="seat-map">
+    <section class="seat-map" id="status-map">
       <div id="zone-A">
         <div class="block-zone-A" id="zone-A-b1">
           <div class="seat" id="zone-A-b1-1">
@@ -125,7 +125,6 @@
       <div id="zone-C">
         <table id="zone-C-map"></table>
       </div>
-      <!-- <button id="floor-btn">first floor</button> -->
     </section>
 
     <section>
@@ -161,18 +160,20 @@
       <div class="footer">
         <!-- <button class="cus-button">Book</button> -->
         <!-- <button class="cus-button">Leave</button> -->
-        <form class="cus-button" action="book-1.html">
+        <form class="cus-button" action="index-book-1.html">
           <input type="submit" value="Book" />
         </form>
         <form class="cus-button" action="">
           <input type="submit" value="Leave" />
         </form>
-        <button class="menu-button">My Account</button>
+        <form action="index-my_account.html">
+          <input type="submit" value="My Account" />
+        </form>
         <button class="menu-button">Issue</button>
         <button class="menu-button">Charity</button>
       </div>
     </section>
-
+    <!-- <button id="floor-btn">first floor</button> -->
     <script type="module" src="script-home.js"></script>
   </body>
 </html>

@@ -124,6 +124,13 @@ section{
 }
 
 .book-seat {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 12px;
+    width: 12px;
     height: 10px;
     width: 10px;
     border-radius: 50%;

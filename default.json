@@ -1,23 +1,18 @@
 {"seatStatus":{
     "occupied":[
         {"seatId":"zone-A-b1-2",
-            "user":"งึบงับ",
-            "caption":"งึบงึบงับงับ"
+            "caption":"มันเปนงึบงึบงับงับ"
         }
         ,{"seatId":"zone-B-3",
-            "user":"Punchxzshe",
             "caption":"ปั๊นสิบอร่อยมากก"
         }
         ,{"seatId":"zone-C-r2-c5",
-            "user":"VT",
-            "caption":"go to the moon.."
+            "caption":"stepping on the moon.."
         },
         {"seatId":"zone-C-r5-c1",
-            "user":"NaThatHai",
             "caption":"อยากกินเป็ดพะโล้ล้"
         },
         {"seatId":"zone-C-r6-c2",
-            "user":"chomchaby",
             "caption":""
         }
     ]
