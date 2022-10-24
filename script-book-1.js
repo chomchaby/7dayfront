@@ -58,7 +58,7 @@
       e.preventDefault();
       const json = JSON.stringify(Array.from(selectedFriendSet));
       localStorage.setItem('selected-friend-set',json);
-      window.location.href = "book-2.html";
+      window.location.href = "index-book-2.html";
     })
   }
   
