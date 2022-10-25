@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style-by-naz.css" />
-    
+    <link rel="stylesheet" href="style-table.css" />
+    <!-- jQuery -->
+    <script src=
+"https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+
     <title>Document</title>
   </head>
   <body>
@@ -48,32 +53,46 @@
       </div>
     </section>
     <!-- end popup -->
-  <div class="row">
-    <div class="subheading-text">My Friend List</div>
-  </div>
 
-  <table id="currentFriendList">
-    <tr>
-      <th>Name</th>
-      <th>current seat</th>
-    </tr>
-    <tr>
-      <td>Ohlala ahhhhhhhh</td>
-      <td>B3</td>
-    </tr>
-    <tr>
-      <td>Ohmygod ahhhhhhhh</td>
-      <td>B4</td>
-    </tr>
-    <tr>
-      <td>Ohmydog ahhhhhhhh</td>
-      <td>B5</td>
-    </tr>
-    <tr>
-      <td>Ohmysin ahhhhhhhh</td>
-      <td>S17</td>
-    </tr>
-  </table>
-    <script type="module" src="script-popup-YN.js"></script>
+<!-- version2 popup -->
+    <div class="row">
+        <!-- A button to open the popup form -->
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+         <!-- The form -->
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+               <h1>Login</h1>
+
+          <label for="email"><b>Email</b></label>
+           <input type="text" placeholder="Enter Email" name="email" required>
+
+           <label for="psw"><b>Password</b></label>
+           <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+           </form>
+          </div>
+    </div>
+    <!-- end version2 popup -->
+
+    <div class="row">
+      <div class="subheading-text">My friend list</div>
+    </div>
+
+    <!-- table -->
+    <section>
+      <!-- TABLE CONSTRUCTION-->
+      <table id='table'>
+          <!-- HEADING FORMATION -->
+          <tr>
+              <th>Name</th>
+              <th>current seat</th>
+          </tr>
+        </section>
+    <!-- end table -->
+
+    <script type="module" src="script-table.js"></script>
   </body>
 </html>

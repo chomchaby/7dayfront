@@ -8,3 +8,5 @@ fetch('http://demo.api.booking.vtneil.space/api/users')
     .catch((error) => {
         console.error('Error:', error);
       });
+
+// don't forget to change .js->.mjs
