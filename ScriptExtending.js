@@ -9,6 +9,7 @@ var counter=10;
 
         if(counter ===0){
             id.innerHTML = "Time Out!!";
+            window.location.href = "index-home.html";
         }
     },1000);
    
