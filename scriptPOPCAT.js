@@ -29,6 +29,7 @@ window.onload = function(){
 
         if(counter ===0){
             id.innerHTML = "Your score is "+ score;
+            window.location.href = "IndexExtending.html";
         }
     },1000);
    
