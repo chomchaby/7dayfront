@@ -42,10 +42,10 @@
 //     });
 
 function getWeb() {
-    axios.get('http://demo.api.booking.vtneil.space/api/users').then(function(response) {
-        console.log(response.data.booked_item);
+    axios.get('http://demo.api.booking.vtneil.space/api/users/6430000121').then(function(response) {
+        console.log(response.data);
     }).catch(function(error) {
-        console.log('error');
+        console.log('error'); 
     })
 }
 getWeb();

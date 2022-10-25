@@ -3,23 +3,19 @@
     "userId" : "#9999",
     "friend":[
         {   "name" : "Gene",
-            "studentId": "0000",
-            "userId" : "#9989"
+            "studentId": "0000"
         },
         {
             "name" : "Neil",
-            "studentId": "1111",
-            "userId" : "#9998"
+            "studentId": "1111"
         },
         {
             "name" : "Pun",
-            "studentId": "2222",
-            "userId" : "#9998"
+            "studentId": "2222"
         },
         {
-            "name" : "Peae",
-            "studentId": "3333",
-            "userId" : "#9998"
+            "name" : "Prae",
+            "studentId": "3333"
         }
     ],
     "timeout":"25"

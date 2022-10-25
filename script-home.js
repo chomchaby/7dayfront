@@ -1,26 +1,5 @@
-// -------------- function to be done first ----------------- //
-function generateZoneCMap() {
-    var seatType = "seat";
-    var elems = document.getElementById('book-map');
-    if (elems!=null) {
-      seatType = "book-seat";
-    }
-    var table = document.getElementById('zone-C-map');
-    for (let r = 1; r <= 8; r++) {
-      var idrow = "r" + r;
-      table.innerHTML += `<tr id='${idrow}'></tr>`
-      var item = document.getElementById(idrow);
-      for (let c=1; c<=8; c++) {
-        let idcol = "c" + c;
-        let idseat = "zone-C-"+idrow + "-"+ idcol;
-        item.innerHTML += `<td id='${idcol}'>
-                            <div class='${seatType}' id='${idseat}'>
-                              <span class="popuptext"></span>
-                            </div>
-                          </td>`
-      }
-    }
-  }
+  // -------------- function to be done first ----------------- //
+
   // ------------------- all variable ----------------//
   var statusSeats;
   var showCaption;
@@ -29,6 +8,7 @@ function generateZoneCMap() {
     
   // ---------------- function for home page --------------//
   function seatStatusUpdate() {
+    // color
       fetch('default.json').then(function(response) {
         return response.json();
       }).then(function(data) {
@@ -50,6 +30,7 @@ function generateZoneCMap() {
         console.log(error);
       })
   
+      // action
       statusSeats.forEach(function(seat) {
         var popup = seat.childNodes[1];
         if (!showCaption) return;
@@ -93,9 +74,6 @@ function generateZoneCMap() {
   };
   
   // ------------ coding begins here -------------------- //
-
-    // function to be done first
-    generateZoneCMap();
   
     // set default value
     statusSeats = document.querySelectorAll('.seat');
