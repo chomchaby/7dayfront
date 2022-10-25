@@ -37,19 +37,6 @@ table, td, th {
     width: 100%;
     border-collapse: collapse;
   }
-.cus-button{
-    font-size: 1em;
-    /* height: 45px;
-    width: 45%; */
-    /* padding: 10px 25px; */
-    /* color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    background: #403e3d;
-    border-radius: 50px; */
-
-}
 .menu-button{
     font-size: 14px;
     height: 45px;

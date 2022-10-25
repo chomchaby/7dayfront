@@ -24,7 +24,7 @@
     <div class="row"></div>
     <section>
       <div class="boxx">
-        <a href="#divOne" class="buttonn">search</a>
+        <a href="#divOne" class="buttonn" onclick="clickSearch()">search</a>
       </div>
     </div>
       <div class="overlay" id="divOne">
@@ -34,16 +34,14 @@
           <div class="content">
             <div class="container">
               <form>
-                <p class="subheading-text" style="font-size:15px;">Firstname Lastname</p>
-                <p style="font-size:12px;">Are you sure adding this person to your friend list?</p>
+                <p class="subheading-text" style="font-size:15px;" id="friendName"></p>
+                <p style="font-size:12px;" id="searchPopText">Are you sure adding this person to your friend list?</p>
                 <div class="row">
                   <div class="column" style="width:67%;">
-                    <input type="submit" value="YES" />
+                    <a href="index-friend_list.html" class="buttonn" onclick="addfriend()">YES</a>
                   </div>
                   <div class="column" style="width:33%;">
-                    <form action="index-book-1.html">
-                      <input type="submit" value="NO" />
-                    </form>
+                    <a href="#" class="buttonn">NO</a>
                   </div>
                 </div>
               </form>
@@ -54,45 +52,30 @@
     </section>
     <!-- end popup -->
 
-<!-- version2 popup -->
-    <div class="row">
-        <!-- A button to open the popup form -->
-        <button class="open-button" onclick="openForm()">Open Form</button>
-
-         <!-- The form -->
-        <div class="form-popup" id="myForm">
-          <form action="/action_page.php" class="form-container">
-               <h1>Login</h1>
-
-          <label for="email"><b>Email</b></label>
-           <input type="text" placeholder="Enter Email" name="email" required>
-
-           <label for="psw"><b>Password</b></label>
-           <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-           </form>
-          </div>
-    </div>
-    <!-- end version2 popup -->
-
     <div class="row">
       <div class="subheading-text">My friend list</div>
     </div>
 
     <!-- table -->
-    <section>
-      <!-- TABLE CONSTRUCTION-->
-      <table id='table'>
-          <!-- HEADING FORMATION -->
-          <tr>
-              <th>Name</th>
-              <th>current seat</th>
-          </tr>
-        </section>
-    <!-- end table -->
+        <section>
+            <!-- TABLE CONSTRUCTION-->
+            <table id='table'>
+                <!-- HEADING FORMATION -->
+                <tr>
+                    <th>Name</th>
+                    <th>current seat</th>
+                </tr>
+            </table>
+          </section>
 
+    <!-- end table -->
+    <div class="row">
+        <div class="black-normal-button">
+            <form action="index-my_account.html">
+                <input type="submit"  value="back to my account">
+            </form>
+        </div>
+    </div>
     <script type="module" src="script-table.js"></script>
-  </body>
+  </body> 
 </html>
