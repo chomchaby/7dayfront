@@ -67,14 +67,16 @@ table, td, th {
 .black-normal-button{
     background-color: #413b3b;
     color: #fff;
-    padding: 15px 20px;
+    padding: 3px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     font-size: 15px;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0 auto;
+    margin-top: 5px;
 }
 .search-button {
     font-size: 10px;
@@ -113,17 +115,16 @@ table, td, th {
     margin-left: 5px;
 }
 .seat-display-button{
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
-    height: 100px;
-    width: 120px;
+    height: fit-content;
+    width: fit-content;
     text-align: center;
     text-decoration-style: double;
     color: #fff;
+    padding: 10px;
     background: rgb(51, 189, 175);
     border-radius: 15px;
-    border-width: 1em;
-    border-color: #fff;
     margin-top: 20px;
     margin:0 auto;
 
@@ -348,10 +349,12 @@ input[type=text], textarea {
 input[type="submit"] {
     background-color: #413b3b;
     color: #fff;
-    padding: 15px 20px;
+    padding: 20px;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     cursor: pointer;
+    height: fit-content;
+    width: fit-content;
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 3px;

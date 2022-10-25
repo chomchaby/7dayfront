@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style-by-naz.css" />
     <title>Document</title>
+    <!-- include the jQuery library -->
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
   </head>
   <body>
     <div class="header">My Account</div>
-    <div class="subheading-text">Nathathai Aungudomsin</div>
-    <div class="subheading-text">6430204221</div>
+    <div class="subheading-text" id="username"></div>
+    <div class="subheading-text" id="studentid"></div>
 
     <div class="row">
-      <div class="seat-display-button">5A</div>
+      <div class="seat-display-button" id="seatbutton"></div>
     </div>
 
-    <div class="subheading-text">My Seat: 5A</div>
+    <div class="subheading-text" id="seattext"></div>
     <div class="subheading-text">My Caption:</div>
     <input
       type="text"
@@ -24,26 +29,19 @@
       value="want someone to joy playing indy game sky"
     /><br />
 
-    <button onclick="disableTxt()">save</button>
+    <button onclick="disableTxt()" id="savebt">save</button>
     <button onclick="undisableTxt()">change</button>
 
-    <script>
-      function disableTxt() {
-        document.getElementById("myCaption").disabled = true;
-      }
-
-      function undisableTxt() {
-        document.getElementById("myCaption").disabled = false;
-      }
-    </script>
-
-    <form class="buttonn" action="index-book-2.html">
+    <form class="black-normal-button" action="index-book-2.html">
       <input type="submit" value="Change Seat" />
     </form>
-    <form class="buttonn" action="index-friend_list.html">
+    <form class="black-normal-button" action="index-friend_list.html">
       <input type="submit" value="Friend List" />
     </form>
+    <form class="black-normal-button" action="index-home.html">
+      <input type="submit" value="home" />
+    </form>
 
-    <script type="module" src="script-book-1.js"></script>
+    <script type="module" src="script-my-account.mjs"></script>
   </body>
 </html>
