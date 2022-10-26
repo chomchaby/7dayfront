@@ -24,78 +24,39 @@
           seat.style.background = "#EDE6E6";
           seat.style.border = "2px solid black";
         });
-    console.log(data);
-        data.forEach( seat => {
-          const [id, value] = seat;
-          console.log(id);
-        })
-        // // occupied seat
-        // occupiedSeat = data.seatStatus.occupied
-        // occupiedSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#D2B48C";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        // // concentrate seat
-        // concentrateSeat = data.seatStatus.concentrate
-        // concentrateSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#F5DEB3";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        // // entertain seat
-        // entertainSeat = data.seatStatus.entertain
-        // occupiedSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#FFD700";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        // // want_date seat
-        // want_dateSeat = data.seatStatus.want_date
-        // want_dateSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#FFA07A";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        // // want_friend seat
-        // want_friendSeat = data.seatStatus.want_friend
-        // want_friendSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#D2691E";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        // // want_study_friend seat
-        // want_study_friendSeat = data.seatStatus.want_study_friend
-        // want_study_friendSeat.forEach(cell =>{
-        //   var seats = document.querySelectorAll('#'+cell.seatId);
-        //   seats.forEach(seat => {
-        //     seat.style.background = "#B22222";
-        //     if (seat.classList.contains('seat')) {
-        //       seat.childNodes[1].textContent = cell.caption;
-        //     }
-        //   });
-        // });
-        
+        for (var id in data) {
+          var seat = document.getElementById(id);
+          // occupied
+          if(data[id].whatsup=='occupied') {
+            seat.style.background = "#D2B48C";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // concentrate
+          else if(data[id].whatsup=='concentrate') {
+            seat.style.background = "#F5DEB3";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // entertain
+          else if(data[id].whatsup=='entertain') {
+            seat.style.background = "#FFD700";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_date
+          else if(data[id].whatsup=='want_date') {
+            seat.style.background = "#FFA07A";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_friend') {
+            seat.style.background = "#D2691E";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_study_friend') {
+            seat.style.background = "#B22222";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+        }        
 
       }).catch(function (error) {
         console.log(error);
