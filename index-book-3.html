@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-by-naz.css" />
     <title>Booking step 3</title>
   </head>
 
@@ -13,18 +13,22 @@
       <div class="header">Book step 2</div>
     </section>
     <section id="choose seat">
-      <label for="seat-to-book-table">Summary</label>
+      <br />
+      <label for="seat-to-book-table" class="subheading-text">Summary</label>
+      <br />
       <table id="seat-to-book-table"></table>
     </section>
 
     <section>
-      <div class="footer">
-        <form action="index-book-2.html">
-          <input type="submit" value="Back" />
-        </form>
+      <div class="row">
+        <div class="column">
+          <a href="index-book-1.html" class="back-btn" style="float: right"
+            >BACK</a
+          >
+        </div>
         <form id="form-send-booking">
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="next-btn">Submit</button>
           </div>
         </form>
       </div>

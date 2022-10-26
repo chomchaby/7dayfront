@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-home.css" />
     <title>Booking step 2</title>
   </head>
 
@@ -131,16 +131,22 @@
     </section>
 
     <section>
-      <div class="footer">
-        <button id="previous-friend"><<</button>
-        <button id="next-friend">>></button>
-        <form action="index-book-1.html">
-          <input type="submit" value="Back" />
-        </form>
+      <div class="row">
+        <div class="column">
+          <button id="previous-friend" class="cream-bt" style="float: right">
+            <<
+          </button>
+        </div>
+        <button id="next-friend" class="cream-bt">>></button>
+      </div>
+      <div class="row">
+        <div class="column">
+          <a href="index-book-1.html" class="back-btn" style="float: right"
+            >BACK</a
+          >
+        </div>
         <form id="form-submit-booking">
-          <div>
-            <button type="submit">Continue</button>
-          </div>
+          <button type="submit" class="next-btn">NEXT</button>
         </form>
       </div>
     </section>

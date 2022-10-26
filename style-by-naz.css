@@ -79,6 +79,37 @@ table, td, th {
     letter-spacing: 1px;
     border-radius:10px;
 }
+.back-btn{
+    font-size: 1em;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #403e3d;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+.next-btn{
+    float: left;
+    padding: 10px 20px;
+    background-image: linear-gradient(
+        to right,
+        #a5d7a3 0%,
+        #1f4452 51%,
+        #9ae834 100%
+    );
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+}
 .row {
     padding-top: 10px;
     padding-bottom: 10px;
