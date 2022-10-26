@@ -29,13 +29,23 @@ pendingBookingSeat = new Map(Object.entries(pendingBookingSeat));
 pendingBookingSeat = new Map([...pendingBookingSeat].sort())
 createSummaryTable();
 
-function clickSubmit(){
-    $.set('http://demo.api.booking.vtneil.space/api/users/'+ localStorage.getItem('current-user-id'),function(data){
-        var userid = "001";
-        document.getElementById("friendName").innerHTML = data[userid].name;
-        //check if the user already have this friend 
-        //check if the password is correct and have this user in the data
-        //edit the popup -->(delete the button no) searchPopText
-        //if not found -> "Not found. Make sure you enter the correct password"
-    });
-}
+// var data = new Map();
+// data.set("current_seat_id","F1-C64");
+// fetch('http://demo.api.booking.vtneil.space/api/users/001', {
+//    method: 'POSTman',
+//    body: JSON.stringify(data),
+//  })
+//  .then(response => response.json())
+//  .then(data => {
+//    console.log('Success:', data);
+//  })
+//  .catch((error) => {
+//    console.error('Error:', error);
+//  });
+
+
+var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+var theUrl = "http://demo.api.booking.vtneil.space/api/users/001";
+xmlhttp.open("POST", theUrl);
+// xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xmlhttp.send(JSON.stringify({ "current_seat_id": "F1-C64"}));

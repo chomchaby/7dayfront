@@ -110,8 +110,8 @@
   // ------------ coding begins here -------------------- //
   
     // SET SOME ID
-    localStorage.setItem('current-user-id','001');
-    //localStorage.removeItem("");
+    // localStorage.setItem('current-user-id','001');
+    localStorage.removeItem('current-user-id');
 
     // set default value
     allSeat = document.querySelectorAll('.seat');
