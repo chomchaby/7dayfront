@@ -5,53 +5,16 @@ body{
     background: #E4EFE7;
 }
 
-section{
-    margin: 0px 0;
-}
 .header{
     font-size: 45px;
     font-weight: 500;
     font-family: 'Century Gothic', sans-serif; 
     margin: 0;
     text-align: center;
-    color:#403333;
-    background-color: #b4ee69;
+    color: black;
+    background-image: linear-gradient(to right, #a2f8a2 0%, #8ed451  51%, #88e188  100%);
     padding: 20px;
     letter-spacing: 0px;
-}
-
-.footer {
-    background-color: #f1f1f1;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
-}
-table, td, th {
-    border: 1px solid;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-.menu-button{
-    font-size: 14px;
-    height: 45px;
-    width: 32%;
-    /* padding: 10px 25px; */
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    background: #403e3d;
-    border-radius: 50px;
-    margin-top: 10px;
-
 }
 .black-normal-button{
     background-color: #413b3b;
@@ -125,21 +88,21 @@ table, td, th {
           
          
 .btn-green-grad {
-    background-image: linear-gradient(to right, #8beb78 0%, #0f3443  51%, #9ae834  100%);
-    font-family: 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right, #a8eb60 0%, #0f3443  51%, #b1e36c  100%);
     margin: 10px;
+    width: 100%;
+    border-radius: 50px;
     padding: 15px 45px;
-    font-size: 40px;
+    font-size: 17px;
     text-align: center;
-    font-weight: bold;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
     display: block;
     margin: 0 auto;
+    text-decoration: none;
   }
 
   .btn-green-grad:hover {
@@ -181,7 +144,7 @@ table, td, th {
 }
 
 #zone-A {
-    background-color: #D2F8B6; 
+    background-color: #e5ffd3; 
     width: 90%;
     display: inline-block;
     margin: 10px;
@@ -204,7 +167,7 @@ table, td, th {
     user-select: none;
 }
 #zone-B{
-    background-color: #b6f8e5; 
+    background-color: #4be5b9; 
     width: 90%;
     display: inline-block;
     margin: 10px;
@@ -231,7 +194,7 @@ table, td, th {
     user-select: none;
 }
 #zone-C {
-    background-color: rgb(232, 244, 123); 
+    background-color: rgb(26, 124, 139); 
     width: 90%;
     display: inline-block;
     margin-top: 20px;
@@ -318,6 +281,7 @@ table, td, th {
     text-align: center;
 }
 .buttonn{
+    width: 100%;
     font-size: 1em;
     padding: 20px 35px;
     color: #fff;

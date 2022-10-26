@@ -1,37 +1,71 @@
   // -------------- function to be done first ----------------- //
 
   // ------------------- all variable ----------------//
-  var statusSeats;
-  var showCaption;
+  var allSeat;
   var occupiedSeat;
-  var myInterval;
+  var concentrateSeat
+  var entertainSeat;
+  var want_dateSeat;
+  var want_friendSeat;
+  var want_study_friendSeat;
+
+  var showCaption;
+  var myIntervalStatus;
+  var myIntervalCaption
     
   // ---------------- function for home page --------------//
-  function seatStatusUpdate() {
-    // color
-      fetch('default.json').then(function(response) {
+  function loadStatusToMap() {
+      // color
+      fetch('status.json').then(function(response) {
         return response.json();
       }).then(function(data) {
-        statusSeats.forEach(seat => {
-          seat.style.background = "green";
+        // set default 
+        allSeat.forEach(seat => {
+          seat.style.background = "#EDE6E6";
+          seat.style.border = "2px solid black";
         });
-        occupiedSeat = data.seatStatus.occupied
-        occupiedSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(s => {
-            s.style.background = "red";
-            if (s.classList.contains('seat')) {
-              s.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-  
+        for (var id in data) {
+          var seat = document.getElementById(id);
+          // occupied
+          if(data[id].whatsup=='occupied') {
+            seat.style.background = "#D2B48C";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // concentrate
+          else if(data[id].whatsup=='concentrate') {
+            seat.style.background = "#F5DEB3";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // entertain
+          else if(data[id].whatsup=='entertain') {
+            seat.style.background = "#FFD700";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_date
+          else if(data[id].whatsup=='want_date') {
+            seat.style.background = "#FFA07A";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_friend') {
+            seat.style.background = "#D2691E";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_study_friend') {
+            seat.style.background = "#B22222";
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+        }        
+
       }).catch(function (error) {
         console.log(error);
       })
+  }
   
+  function captionShowUpdate() {
       // action
-      statusSeats.forEach(function(seat) {
+      allSeat.forEach(function(seat) {
         var popup = seat.childNodes[1];
         if (!showCaption) return;
         if (popup.textContent == "") {
@@ -41,11 +75,10 @@
           popup.classList.add('show');
         }
       });
-   
+
   }
-  
   function addClickToShowCaption() {
-    statusSeats.forEach(seat => {
+    allSeat.forEach(seat => {
       seat.addEventListener('click', function handleClick(event) {
         var popup = seat.childNodes[1];
         if (popup.textContent!='') popup.classList.toggle("show");
@@ -57,7 +90,7 @@
   function toggleCaption() {
     var btn = document.getElementById("caption-btn");
     if (!showCaption) {
-      statusSeats.forEach(seat => {
+      allSeat.forEach(seat => {
         if (seat.childNodes[1].textContent !='') {
           seat.childNodes[1].classList.add('show');
         }
@@ -65,7 +98,7 @@
       btn.innerHTML = 'no caption';
       showCaption = true;
     } else {
-      statusSeats.forEach(seat => {
+      allSeat.forEach(seat => {
         seat.childNodes[1].classList.remove('show');
       });
       btn.innerHTML = 'caption';
@@ -76,13 +109,16 @@
   // ------------ coding begins here -------------------- //
   
     // set default value
-    statusSeats = document.querySelectorAll('.seat');
+    allSeat = document.querySelectorAll('.seat');
     showCaption = false;
   
     // home page (id : contain-map, status-map)
        // real time status and caption
         document.addEventListener('DOMContentLoaded', function() {
-          myInterval = setInterval(seatStatusUpdate, 2000);
+          myIntervalStatus = setInterval(loadStatusToMap, 2000);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+          myIntervalCaption = setInterval(captionShowUpdate, 2000);
         });
       // click event on seats;
       addClickToShowCaption();
