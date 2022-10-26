@@ -11,13 +11,15 @@
 <body>
     <div class="container">
         <h1>Log in</h1>
+        <form>
         <label for="StudID" id="studid">Student ID: </label>
-        <input type="text" placeholder="Enter Student ID" name="Sid" required>
+        <input type="text" placeholder="Enter Student ID" name="Sid" value="" id="inn" required>
         <br><br><br>
         Password: <input type="password" id="myInput"> <br>
         <input type="checkbox" onclick="myFunction()" >show password
         <br>
-        <button type="summit" class="buttonn" onclick="window.location.href='index-home.html'">Login</button>
+        </form>
+        <button type="summit" class="buttonn" onclick="loginn()">Login</button>
     </div>
 </body>
 </html>
