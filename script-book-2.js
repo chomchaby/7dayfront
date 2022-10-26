@@ -3,14 +3,8 @@
   // ------------------- all variable ----------------//
 
   var allSeat;
-  var occupiedSeat;
-  var concentrateSeat
-  var entertainSeat;
-  var want_dateSeat;
-  var want_friendSeat;
-  var want_study_friendSeat;
-  
   var bookedSeatArray;
+  
   var selectedFriendArray;
   var indexOfCurrentSelectedFriend;
   var pendingBookingSeat = new Map(); // student id -> seat id
@@ -20,86 +14,50 @@
   // --------- function for booking step 2 : select seats ------------------- //
   async function loadStatusToMap() {
     bookedSeatArray = [];
-    await fetch('default.json').then(function(response) {
+    await fetch('status.json').then(function(response) {
       return response.json();
     }).then(function(data) {
         // set default 
         allSeat.forEach(seat => {
           seat.style.background = "#EDE6E6";
           seat.style.border = "2px solid black";
-        });
-        // occupied seat
-        occupiedSeat = data.seatStatus.occupied
-        occupiedSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+        });   
+        for (var id in data) {
+          bookedSeatArray.push(id);
+          var seat = document.getElementById(id);
+          // occupied
+          if(data[id].whatsup=='occupied') {
             seat.style.background = "#D2B48C";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-        // concentrate seat
-        concentrateSeat = data.seatStatus.concentrate
-        concentrateSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // concentrate
+          else if(data[id].whatsup=='concentrate') {
             seat.style.background = "#F5DEB3";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-        // entertain seat
-        entertainSeat = data.seatStatus.entertain
-        occupiedSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // entertain
+          else if(data[id].whatsup=='entertain') {
             seat.style.background = "#FFD700";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-        // want_date seat
-        want_dateSeat = data.seatStatus.want_date
-        want_dateSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_date
+          else if(data[id].whatsup=='want_date') {
             seat.style.background = "#FFA07A";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-        // want_friend seat
-        want_friendSeat = data.seatStatus.want_friend
-        want_friendSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_friend') {
             seat.style.background = "#D2691E";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
-        // want_study_friend seat
-        want_study_friendSeat = data.seatStatus.want_study_friend
-        want_study_friendSeat.forEach(cell =>{
-          var seats = document.querySelectorAll('#'+cell.seatId);
-          seats.forEach(seat => {
-            bookedSeatArray.push(seat.seatId);
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+          // want_friend
+          else if(data[id].whatsup=='want_study_friend') {
             seat.style.background = "#B22222";
-            if (seat.classList.contains('seat')) {
-              seat.childNodes[1].textContent = cell.caption;
-            }
-          });
-        });
+              seat.childNodes[1].textContent = data[id].caption;
+          }
+        }      
+
+     
     }).catch(function (error) {
       console.log(error);
     })
@@ -144,6 +102,7 @@
   }
   function isFriendSeat(id) {
     for (const [key, value] of pendingBookingSeat) {
+      if (value == currentSelectedSeat) continue;
       if (value==id) return true;
     }
     return false;
@@ -160,17 +119,17 @@
         // not select yet
         else if (currentSelectedSeat == null) {
           currentSelectedSeat = seat.id;
-          seat.style.background = "orange";
+          seat.style.background = "red";
         }
         // unselect seat
         else if (currentSelectedSeat == seat.id) {
           currentSelectedSeat = null;
-          seat.style.background = "green";
+          seat.style.background = "#EDE6E6";
         }
         // change seat
         else {
-          seat.style.background = "orange";
-          document.getElementById(currentSelectedSeat).style.background = "green";
+          seat.style.background = "red";
+          document.getElementById(currentSelectedSeat).style.background = "#EDE6E6";
           currentSelectedSeat = seat.id;
         }
       });
