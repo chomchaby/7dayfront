@@ -31,14 +31,6 @@ section{
     width: 100%;
 
 }
-table, td, th {
-    border: 1px solid;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
 .menu-button{
     font-size: 14px;
     height: 45px;
