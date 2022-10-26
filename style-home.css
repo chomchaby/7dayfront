@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Inter', sans-serif;
-    background: #E4EFE7;
+    background: #FDFAF6;
 }
 
 .header{
@@ -144,7 +144,7 @@ body{
 }
 
 #zone-A {
-    background-color: #e5ffd3; 
+    background-color: #ebebd1; 
     width: 90%;
     display: inline-block;
     margin: 10px;
@@ -167,7 +167,7 @@ body{
     user-select: none;
 }
 #zone-B{
-    background-color: #4be5b9; 
+    background-color: #BAD1C2; 
     width: 90%;
     display: inline-block;
     margin: 10px;
@@ -194,7 +194,7 @@ body{
     user-select: none;
 }
 #zone-C {
-    background-color: rgb(26, 124, 139); 
+    background-color: #4FA095; 
     width: 90%;
     display: inline-block;
     margin-top: 20px;
