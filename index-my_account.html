@@ -13,12 +13,12 @@
     ></script>
   </head>
   <body>
-    <div class="header">My Account</div>
+    <div class="header">MY ACCOUNT</div>
     <div class="subheading-text" id="username"></div>
     <div class="subheading-text" id="studentid"></div>
 
     <div class="row">
-      <div class="seat-display-button" id="seatbutton"></div>
+      <div class="btn-green-grad" id="seatbutton"></div>
     </div>
 
     <div class="subheading-text" id="seattext"></div>
@@ -28,19 +28,29 @@
       id="myCaption"
       value="want someone to joy playing indy game sky"
     /><br />
-
-    <button onclick="disableTxt()" id="savebt">save</button>
-    <button onclick="undisableTxt()">change</button>
-
-    <form class="black-normal-button" action="index-change-seat.html">
+    <button class="cream-bt" onclick="disableTxt()" id="savebt">save</button>
+    <button class="cream-bt" onclick="undisableTxt()">change</button>
+    <!-- <form class="black-normal-button" action="index-change-seat.html">
       <input type="submit" value="Change Seat" />
     </form>
     <form class="black-normal-button" action="index-friend_list.html">
       <input type="submit" value="Friend List" />
-    </form>
-    <form class="black-normal-button" action="index-home.html">
-      <input type="submit" value="home" />
-    </form>
+    </form> -->
+    <div class="row" style="margin-top: 0px; margin: 0 auto">
+      <a href="index-change-seat.html" class="buttonn" style="width: 100%"
+        >CHANGE SEAT</a
+      >
+    </div>
+    <div class="row" style="margin-top: 0px; margin: 0 auto">
+      <a href="index-change-seat.html" class="buttonn" style="width: 100%"
+        >FRIEND LIST</a
+      >
+    </div>
+    <div class="row" style="margin-top: 0px; margin: 0 auto">
+      <a href="index-change-seat.html" class="btn-home-grad" style="width: 100%"
+        >HOME</a
+      >
+    </div>
 
     <script type="module" src="script-my-account.mjs"></script>
   </body>

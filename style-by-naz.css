@@ -2,20 +2,22 @@
 
 body{
     font-family: 'Inter', sans-serif;
-    background:white;
+    background: #E4EFE7;
 }
 
 section{
     margin: 0px 0;
 }
 .header{
-    font-size: 3em;
-    font-weight: bold;
+    font-size: 45px;
+    font-weight: 700;
+    font-family: 'Poppins',sans-serif ;
     margin: 0;
     text-align: center;
-    color:black;
-    background-color: #f1f1f1;
-    padding: 10px;
+    color:#322727;
+    background-color: #bdea56;
+    padding: 20px;
+    letter-spacing: 1px;
 }
 
 .footer {
@@ -65,6 +67,19 @@ table, td, th {
     margin: 0 auto;
     margin-top: 5px;
 }
+.cream-bt{
+    background-color: #e7e7e7;
+    color: black;
+    padding: 3px;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    border-radius:3px;
+
+}
 .search-button {
     font-size: 10px;
     font-weight: bold;
@@ -110,12 +125,64 @@ table, td, th {
     text-decoration-style: double;
     color: #fff;
     padding: 10px;
-    background: rgb(51, 189, 175);
+    background: #064420;
     border-radius: 15px;
     margin-top: 20px;
     margin:0 auto;
 
 }
+          
+         
+.btn-green-grad {
+    background-image: linear-gradient(to right, #86eb78 0%, #0f3443  51%, #9ae834  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .btn-green-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+          
+  .btn-home-grad {
+    background-image: linear-gradient(to right, #ede5d0 0%, #00223E  51%, #e7dc79  100%);
+    padding: 20px 45px;
+    font-size: 16px;
+    font-weight: 580;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    border-radius: 50px;
+
+  }
+
+  .btn-home-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+ 
 .seat-map {
     width: 100%;
     text-align: center;
@@ -260,8 +327,7 @@ table, td, th {
 }
 .buttonn{
     font-size: 1em;
-    margin-top: 20px;
-    padding: 15px 35px;
+    padding: 20px 35px;
     color: #fff;
     text-decoration: none;
     text-align: center;

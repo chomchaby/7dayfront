@@ -1,7 +1,7 @@
 // to use $ must include jQuery library in html file
 function displaytext(){
     $.get('http://demo.api.booking.vtneil.space/api/users' ,function(data){
-        var userid = "6430000121";
+        var userid = "001";
         console.log(data[userid]);
         document.getElementById("username").innerHTML = data[userid].name;
         document.getElementById("studentid").innerHTML = data[userid].id;
