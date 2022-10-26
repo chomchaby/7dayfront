@@ -7,4 +7,7 @@ function myFunction() {
     }
   }
 
-  
+function loginn(){
+  localStorage.setItem('current_id',document.getElementById("inn").value);
+  window.location.href='index-home.html';
+}
