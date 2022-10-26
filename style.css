@@ -33,19 +33,6 @@ section{
     width: 100%;
 
 }
-.cus-button{
-    font-size: 1em;
-    /* height: 45px;
-    width: 45%; */
-    /* padding: 10px 25px; */
-    /* color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    background: #403e3d;
-    border-radius: 50px; */
-
-}
 .menu-button{
     font-size: 14px;
     height: 45px;
@@ -127,6 +114,7 @@ section{
 
 }
 
+<<<<<<< HEAD
 .book-seat {
     font-family:'Courier New', sans-serif;
     margin: 0;
@@ -144,6 +132,25 @@ section{
     cursor: pointer;
 }
 
+||||||| 0307418
+.book-seat {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 12px;
+    width: 12px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+=======
+>>>>>>> 850e3d5fb3a83db035fc0a0f3369d5f24c3399b9
 .seat {
     margin: 0;
     position: absolute;

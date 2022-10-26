@@ -1,10 +1,5 @@
 // -------------- function to be done first ----------------- //
 function generateZoneCMap() {
-    var seatType = "seat";
-    var elems = document.getElementById('book-map');
-    if (elems!=null) {
-      seatType = "book-seat";
-    }
     var table = document.getElementById('zone-C-map');
     for (let r = 1; r <= 8; r++) {
       var idrow = "F1-C-row-" + r;
@@ -16,7 +11,7 @@ function generateZoneCMap() {
         if (c<10) idseat = "F1-C0"+ c;
         else idseat = "F1-C"+ c;
         item.innerHTML += `<td id='${idcol}'>
-                            <div class='${seatType}' id='${idseat}'>
+                            <div class='seat' id='${idseat}'>
                               <span class="popuptext"></span>
                             </div>
                           </td>`

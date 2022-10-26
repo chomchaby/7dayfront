@@ -1,19 +1,59 @@
 {"seatStatus":{
     "occupied":[
-        {"seatId":"F1-A02",
+        {"seatId":"F1-A01",
             "caption":"มันเปนงึบงึบงับงับ"
         }
-        ,{"seatId":"F1-B03",
+        ,{"seatId":"F1-A02",
             "caption":"ปั๊นสิบอร่อยมากก"
         }
-        ,{"seatId":"F1-C45",
+        ,{"seatId":"F1-A03",
             "caption":"stepping on the moon.."
         },
-        {"seatId":"F1-C31",
+        {"seatId":"F1-A04",
             "caption":"อยากกินเป็ดพะโล้ล้"
         },
-        {"seatId":"F1-C05",
+        {"seatId":"F1-A05",
             "caption":""
+        }
+    ],
+    "concentrate":[
+        {"seatId":"F1-B01",
+            "caption":"อยากยุคนเดียว"
+        },
+        {"seatId":"F1-B02",
+            "caption":"จานอนน"
+        }
+    ],
+    "entertain":[
+        {"seatId":"F1-C01",
+            "caption":"let's sing a song"            
+        }
+        ,{"seatId":"F1-C02",
+            "caption":"แบกแรงค์หน่อยค่าาาา"
+        }
+    ],
+    "want_date":[
+        {"seatId":"F1-C03",
+            "caption":""
+        }
+        ,{"seatId":"F1-C04",
+            "caption":"ชอบเลี้ยงแมว"
+        }
+    ],
+    "want_friend":[
+        {"seatId":"F1-C05",
+            "caption":"สวัสดีครับ ยินดีที่ได้รู้จัก"
+        }
+        ,{"seatId":"F1-C06",
+            "caption":"เพิ่ลๆๆ เหงา"
+        }
+    ],
+    "want_study_friend":[
+        {"seatId":"F1-C07",
+            "caption":"จาสอบแล้วทำไงดี"
+        }
+        ,{"seatId":"F1-C08",
+            "caption":"F แค่เอื้อม"
         }
     ]
 }

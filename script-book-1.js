@@ -54,7 +54,6 @@
   function addContinueLoadFriendToNextHTML() {
     const form = document.getElementById('form-select-seat');
     form.addEventListener('submit',function(e) {
- 
       e.preventDefault();
       const json = JSON.stringify(Array.from(selectedFriendSet));
       localStorage.setItem('selected-friend-set',json);
@@ -65,7 +64,7 @@
   // ------------ coding begin here -------------------- //
   // booking step 1 - select friend (id : select-friend)
     var selectedFriendSet = new Set();
-    selectedFriendSet.add
+    // selectedFriendSet.add();
     updateFriendList();
     document.getElementById('select-friend-btn').addEventListener('click',selectFriend);
     addContinueLoadFriendToNextHTML(); 
