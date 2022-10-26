@@ -152,7 +152,7 @@
       updateSeatColor();
     });
   }
-  function addSubmitBookingAction() {
+  function addContinueBookingAction() {
     const form = document.getElementById('form-submit-booking');
     form.addEventListener('submit',function(e) {
       if (pendingBookingSeat.size==0) return;
@@ -178,5 +178,5 @@
       // add click event for booking
       addChangeColorWhenClick();
       addPreviousNextAction();
-      addSubmitBookingAction();
+      addContinueBookingAction();
   

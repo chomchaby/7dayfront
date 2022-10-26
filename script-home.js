@@ -15,7 +15,8 @@
     
   // ---------------- function for home page --------------//
   function loadStatusToMap() {
-      // color
+
+      // set color by occupying and whatsup key (concentrate, want_friend,...)
       fetch('status.json').then(function(response) {
         return response.json();
       }).then(function(data) {
@@ -108,6 +109,10 @@
   
   // ------------ coding begins here -------------------- //
   
+    // SET SOME ID
+    localStorage.setItem('current-user-id','001');
+    //localStorage.removeItem("");
+
     // set default value
     allSeat = document.querySelectorAll('.seat');
     showCaption = false;

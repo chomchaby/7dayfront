@@ -53,7 +53,7 @@
     element.parentNode.removeChild(element);
   }
   
-  function addContinueLoadFriendToNextHTML() {
+  function addNextBtnLoadFriendToNextHTML() {
     const form = document.getElementById('form-select-seat');
     form.addEventListener('submit',function(e) {
       e.preventDefault();
@@ -75,7 +75,7 @@
     createSelectedFriendTable();
 
     document.getElementById('select-friend-btn').addEventListener('click',selectFriend);
-    addContinueLoadFriendToNextHTML(); 
+    addNextBtnLoadFriendToNextHTML() 
   
   
   //-------------------------------------//
