@@ -34,11 +34,12 @@
         table.innerHTML += `
         <tr id='${"selected-"+friend}'>
             <td>${friend}</td>
-            <td><button class="del-row-btn" id='${"selected-"+friend}' >Delete</button></td>
+
+            <td><div class="red-bt" id='${"selected-"+friend}' >x</div></td>
         </tr>
         `
     }
-    var btn = document.querySelectorAll(".del-row-btn");
+    var btn = document.querySelectorAll(".red-bt");
     btn.forEach( b=> {
         let friend = b.id.slice(9)
         b.addEventListener('click', function handleClick(event) {

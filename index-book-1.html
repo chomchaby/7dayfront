@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style-home.css" />
+    <link rel="stylesheet" href="style-book1.css" />
     <title>Booking step 1</title>
   </head>
 
@@ -13,23 +13,38 @@
       <div class="header">Booking</div>
     </section>
     <section>
-      <label for="friend-list-selector">Your Friends</label>
-      <select id="friend-list-selector"></select>
-      <button id="select-friend-btn">Select</button>
+      <label class="subheading-text" for="friend-list-selector"
+        >Book more for friends
+      </label>
+      <div class="row">
+        <div class="column" style="width: 43%">
+          <select id="friend-list-selector"></select>
+        </div>
+        <button class="cream-bt" id="select-friend-btn">Select</button>
+      </div>
     </section>
     <section>
-      <label for="friend-to-book-table">Selected Friends</label>
+      <br />
+      <label class="subheading-text" for="friend-to-book-table"
+        >Selected Friends</label
+      >
       <table id="friend-to-book-table"></table>
     </section>
     <section>
-      <form id="form-select-seat">
-        <div>
-          <button type="submit">Continue</button>
+      <div class="row">
+        <div class="column">
+          <a href="index-home.html" class="buttonn" style="float: right"
+            >BACK</a
+          >
         </div>
-      </form>
-      <form action="index-home.html">
-        <input type="submit" value="Back" />
-      </form>
+        <div class="column">
+          <form id="form-select-seat">
+            <button id="form-select-seat" type="submit" class="next-btn">
+              NEXT
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
     <script type="module" src="script-book-1.js"></script>
   </body>
