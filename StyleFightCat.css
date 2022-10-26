@@ -3,13 +3,12 @@ body {
 }
 h1 {
     font-family: "century gothic", sans-serif;
-    
     align-items: center;
     text-align: center;
     margin-top: 20%;
     margin-bottom: 20%;
 }
-
+/*
 #btn {
   align-items: center;
     background-color: #ddd;
@@ -45,6 +44,20 @@ h1 {
 #previous:hover {
   background-color:crimson;
   color: white;
+
+}*/
+
+.buttonn{
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1em;
+  padding: 20px 35px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background: #403e3d;
+  border-radius: 50px;
 
 }
   
