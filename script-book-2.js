@@ -5,7 +5,8 @@
   var allSeat;
   var bookedSeatArray;
   
-  var selectedFriendArray;
+  var selectedFriendList;
+  var idArray; // keys of selectedFriendList (student id)
   var indexOfCurrentSelectedFriend;
   var pendingBookingSeat = new Map(); // student id -> seat id
   var currentSelectedSeat; // store id
@@ -78,9 +79,8 @@
     
   function updateCurrentPerson() {
     // update current person
-    var person = selectedFriendArray[indexOfCurrentSelectedFriend].split(" ");
-    currentPerson  = person[person.length-1];
-    document.getElementById("choosed-friend").textContent = selectedFriendArray[indexOfCurrentSelectedFriend];
+    var currentPerson = idArray[indexOfCurrentSelectedFriend];
+    document.getElementById("choosed-friend").textContent = selectedFriendList.get(currentPerson);
     // update current selected seat
     currentSelectedSeat = pendingBookingSeat.get(currentPerson);
   }
@@ -139,14 +139,14 @@
   function addPreviousNextAction() {
     document.getElementById("previous-friend").addEventListener('click',function() {
       updatePendingSeat();
-      if (indexOfCurrentSelectedFriend==0) indexOfCurrentSelectedFriend = selectedFriendArray.length-1;
+      if (indexOfCurrentSelectedFriend==0) indexOfCurrentSelectedFriend = idArray.length-1;
       else indexOfCurrentSelectedFriend--;
       updateCurrentPerson();
       updateSeatColor();
     });
     document.getElementById("next-friend").addEventListener('click',function() {
       updatePendingSeat();
-      if (indexOfCurrentSelectedFriend==selectedFriendArray.length-1) indexOfCurrentSelectedFriend = 0;
+      if (indexOfCurrentSelectedFriend==idArray.length-1) indexOfCurrentSelectedFriend = 0;
       else indexOfCurrentSelectedFriend++;
       updateCurrentPerson();
       updateSeatColor();
@@ -166,7 +166,8 @@
   // set default value
     allSeat = document.querySelectorAll('.seat');
     // receive friend-list from previous page, convert to array 
-    selectedFriendArray = JSON.parse(localStorage.getItem('selected-friend-set'));
+    selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')));
+    idArray = Array.from(selectedFriendList.keys());
     indexOfCurrentSelectedFriend = 0;
     
   // booking step 2 - select seat (id : contain-map, book-map)
