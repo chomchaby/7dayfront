@@ -50,7 +50,6 @@ body{
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease-out;
     background: #403e3d;
     border-radius: 50px;
     margin-right: 5px;
@@ -98,7 +97,7 @@ body{
   }
 .subheading-text{
     font-family:'Trebuchet MS', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 5px;
     margin-left: 5px;
@@ -154,7 +153,6 @@ body{
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
-    box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     display: block;
     margin: 0 auto;
