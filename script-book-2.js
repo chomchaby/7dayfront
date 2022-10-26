@@ -2,10 +2,15 @@
 
   // ------------------- all variable ----------------//
 
-  var bookSeats;
-  var redSeatArray;
+  var allSeat;
   var occupiedSeat;
+  var concentrateSeat
+  var entertainSeat;
+  var want_dateSeat;
+  var want_friendSeat;
+  var want_study_friendSeat;
   
+  var bookedSeatArray;
   var selectedFriendArray;
   var indexOfCurrentSelectedFriend;
   var pendingBookingSeat = new Map(); // student id -> seat id
@@ -14,21 +19,87 @@
   
   // --------- function for booking step 2 : select seats ------------------- //
   async function loadStatusToMap() {
-    redSeatArray = [];
+    bookedSeatArray = [];
     await fetch('default.json').then(function(response) {
       return response.json();
     }).then(function(data) {
-      // green seat
-      bookSeats.forEach(seat => {
-        seat.style.background = "green";
-      });
-      // red seat
-      occupiedSeat = data.seatStatus.occupied;
-      occupiedSeat.forEach(cell =>{
-        var s = document.getElementById(cell.seatId);
-        s.style.background = "red";
-        redSeatArray.push(cell.seatId);
-      });
+        // set default 
+        allSeat.forEach(seat => {
+          seat.style.background = "#EDE6E6";
+          seat.style.border = "2px solid black";
+        });
+        // occupied seat
+        occupiedSeat = data.seatStatus.occupied
+        occupiedSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#D2B48C";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
+        // concentrate seat
+        concentrateSeat = data.seatStatus.concentrate
+        concentrateSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#F5DEB3";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
+        // entertain seat
+        entertainSeat = data.seatStatus.entertain
+        occupiedSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#FFD700";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
+        // want_date seat
+        want_dateSeat = data.seatStatus.want_date
+        want_dateSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#FFA07A";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
+        // want_friend seat
+        want_friendSeat = data.seatStatus.want_friend
+        want_friendSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#D2691E";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
+        // want_study_friend seat
+        want_study_friendSeat = data.seatStatus.want_study_friend
+        want_study_friendSeat.forEach(cell =>{
+          var seats = document.querySelectorAll('#'+cell.seatId);
+          seats.forEach(seat => {
+            bookedSeatArray.push(seat.seatId);
+            seat.style.background = "#B22222";
+            if (seat.classList.contains('seat')) {
+              seat.childNodes[1].textContent = cell.caption;
+            }
+          });
+        });
     }).catch(function (error) {
       console.log(error);
     })
@@ -39,7 +110,7 @@
     for (const [key, value] of pendingBookingSeat) {
       var s = document.getElementById(value);
       if (key == currentPerson) {
-        s.style.background = "orange";
+        s.style.background = "red";
       }
       else {
         s.style.background = "navy";;
@@ -66,8 +137,8 @@
     }
   }
   function isOccupied(id) {
-    for (var i = 0; i < redSeatArray.length; i++) {
-        if (redSeatArray[i] == id) return true;
+    for (var i = 0; i < bookedSeatArray.length; i++) {
+        if (bookedSeatArray[i] == id) return true;
     }
     return false;
   }
@@ -78,7 +149,7 @@
     return false;
   }
   function addChangeColorWhenClick() {
-    bookSeats.forEach(seat => {
+    allSeat.forEach(seat => {
       seat.addEventListener('click', function handleClick(event) {
         
         // select occupied seat, select friend seat -> return
@@ -135,7 +206,7 @@
 
   
   // set default value
-    bookSeats = document.querySelectorAll('.book-seat');
+    allSeat = document.querySelectorAll('.seat');
     // receive friend-list from previous page, convert to array 
     selectedFriendArray = JSON.parse(localStorage.getItem('selected-friend-set'));
     indexOfCurrentSelectedFriend = 0;

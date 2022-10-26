@@ -2,7 +2,7 @@
 
   // ------------------- all variable ----------------//
 
-  var bookSeats;
+  var allSeat;
   var redSeatArray;
   var occupiedSeat;
 
@@ -10,13 +10,12 @@
   
   // --------- function for booking step 2 : select seats ------------------- //
   async function loadStatusToMap() {
-    console.log(bookSeats);
     redSeatArray = [];
     await fetch('default.json').then(function(response) {
       return response.json();
     }).then(function(data) {
       // green seat
-      bookSeats.forEach(seat => {
+      allSeat.forEach(seat => {
         seat.style.background = "green";
       });
       // red seat
@@ -38,7 +37,7 @@
     return false;
   }
   function addChangeColorWhenClick() {
-    bookSeats.forEach(seat => {
+    allSeat.forEach(seat => {
       seat.addEventListener('click', function handleClick(event) {
         
         // select occupied seat -> return
@@ -79,7 +78,7 @@
 
   
   // set default value
-    bookSeats = document.querySelectorAll('.book-seat');
+    allSeat = document.querySelectorAll('.seat');
     
   // booking step 2 - select seat (id : contain-map, book-map)
 
