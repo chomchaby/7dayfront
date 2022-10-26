@@ -120,13 +120,13 @@
         document.addEventListener('DOMContentLoaded', function() {
           myIntervalCaption = setInterval(captionShowUpdate, 2000);
         });
+
       // click event on seats;
       addClickToShowCaption();
-      // add click event on caption toggle btn
-      if (document.getElementById("caption-btn")!=null) {
-        document.getElementById("caption-btn").addEventListener('click',toggleCaption);
-      } 
 
+      // add click event on caption toggle btn
+        document.getElementById("caption-btn").addEventListener('click',toggleCaption); 
+      
  
   
   

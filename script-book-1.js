@@ -1,6 +1,7 @@
 // -------------- function to be done first ----------------- //
 
   // ------------------- all variable ----------------// 
+  var selectedFriendSet;
   var selectedFriendArray;
   var indexOfCurrentSelectedFriend
     
@@ -63,9 +64,15 @@
   
   // ------------ coding begin here -------------------- //
   // booking step 1 - select friend (id : select-friend)
-    var selectedFriendSet = new Set();
+    selectedFriendArray = JSON.parse(localStorage.getItem('selected-friend-set'));
+    selectedFriendSet = new Set(selectedFriendArray);
+
     // selectedFriendSet.add();
     updateFriendList();
+
+    // create table from old selection
+    createSelectedFriendTable();
+
     document.getElementById('select-friend-btn').addEventListener('click',selectFriend);
     addContinueLoadFriendToNextHTML(); 
   

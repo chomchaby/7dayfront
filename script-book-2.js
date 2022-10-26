@@ -162,7 +162,6 @@
       window.location.href = "index-book-3.html";
     })
   }
-
   
   // set default value
     allSeat = document.querySelectorAll('.seat');

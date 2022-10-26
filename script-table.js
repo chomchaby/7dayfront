@@ -4,7 +4,7 @@
             $.get('http://demo.api.booking.vtneil.space/api/users', 
                     function (data) {
                 var student = '';
-                var userid = "6430000121";
+                var userid = "001";
 
                 // ITERATING THROUGH OBJECTS
                 $.each(data[userid].friends, function (key, value) {
