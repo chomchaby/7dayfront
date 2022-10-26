@@ -1,4 +1,4 @@
-let countTime = new Date("Oct 26, 2022 20:00:00").getTime();
+let countTime = new Date("Oct 26, 2022 21:00:00").getTime();
 
 let timer = setInterval(function(){
     var now = new Date().getTime();

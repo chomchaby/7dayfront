@@ -1,0 +1,31 @@
+body{
+    margin-top: 20%;
+    font-family: 'inter', sans-serif;
+    background-color: linear-gradient(to right, #e6cb8a, #fdf0e0);
+    text-align: center;
+}
+
+h1{
+    font-family: "century gothic", sans-serif;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+#show{
+    font-size: 10px;
+}
+
+
+
+.buttonn{
+    margin-top: 20%;
+    font-size: 1em;
+    padding: 20px 35px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #403e3d;
+    border-radius: 50px;
+}

@@ -1,26 +1,22 @@
 h1{
     align-items: center;
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "century gothic", sans-serif;
     font-size: 3em;
 }
 
-#home {
-    align-items: center;
-      background-color: #ddd;
-    border: none;
-    color: black;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition: 0.3s;
-    margin-top: 20%;
-  }
-  
-  #home:hover {
-      background-color: #3e8e41;
-      color: white;
-    }
-  
+.buttonn{
+  text-align: center;
+  align-items: center;
+  font-display:inherit;
+  font-size: 1em;
+  padding: 20px 35px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background: #403e3d;
+  border-radius: 50px;
+}
 
