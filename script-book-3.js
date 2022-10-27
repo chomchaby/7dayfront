@@ -50,6 +50,7 @@ function sendBooking() {
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         xmlhttp.open("GET", theUrl);
         xmlhttp.send(JSON.stringify({ "user": student_id, "seat": seat_id}));
+        console.log(xmlhttp.responseText);
     }
 }
 

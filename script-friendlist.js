@@ -1,3 +1,5 @@
+var url = "http://demo.api.booking.vtneil.space/api/users/"+localStorage.getItem('current_id');
+
 function clicksearch(){
     $.get('http://demo.api.booking.vtneil.space/api/users' ,function(data){
         var userid = "001";
@@ -11,3 +13,10 @@ function clicksearch(){
 function addfriend(){
     //put new friend to the friend list
 }
+
+
+function sendFriendRequest() {
+
+}
+
+
