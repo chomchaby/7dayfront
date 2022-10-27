@@ -5,7 +5,7 @@
   var allSeat;
   var bookedSeatArray;
   
-  var selectedFriendList;
+  var selectedFriendList; // (map) student id -> student name
   var idArray; // keys of selectedFriendList (student id)
   var indexOfCurrentSelectedFriend;
   var pendingBookingSeat = new Map(); // student id -> seat id
@@ -147,29 +147,40 @@
   function addContinueBookingAction() {
     const form = document.getElementById('form-submit-booking');
     form.addEventListener('submit',function(e) {
-      if (pendingBookingSeat.size==0) return;
       e.preventDefault();
-      const json = JSON.stringify(Object.fromEntries(pendingBookingSeat));
-      localStorage.setItem('selected-seat-map',json);
-      window.location.href = "index-book-3.html";
+
+      if (pendingBookingSeat.get(localStorage.getItem('current_id')) == null) {
+        console.log(document.getElementById('wanning-text'));
+        // document.getElementsById('wanning-text').textContent = "You must choose your seat";
+      }
+      else {
+        const json = JSON.stringify(Object.fromEntries(pendingBookingSeat));
+        localStorage.setItem('selected-seat-map',json);
+        window.location.href = "index-book-3.html";
+      }
     })
   }
   
   // set default value
-    allSeat = document.querySelectorAll('.seat');
-    // receive friend-list from previous page, convert to array 
-    selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')));
-    idArray = Array.from(selectedFriendList.keys());
-    indexOfCurrentSelectedFriend = 0;
+  allSeat = document.querySelectorAll('.seat');
+  // receive friend-list from previous page, convert to array 
+  selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')));
+  // always includes yourself when booking
+  selectedFriendList.set(localStorage.getItem('current_id'),localStorage.getItem('current_name'));
+
+  // set idArray to loop through
+  idArray = Array.from(selectedFriendList.keys());
+  // choose your seat first
+  indexOfCurrentSelectedFriend = idArray.length-1;
     
   // booking step 2 - select seat (id : contain-map, book-map)
 
-      // update seat and person first time
-      updateCurrentPerson();
-      updateSeatColor();
+  // update seat and person first time
+  updateCurrentPerson();
+  updateSeatColor();
       
-      // add click event for booking
-      addChangeColorWhenClick();
-      addPreviousNextAction();
-      addContinueBookingAction();
+  // add click event for booking
+  addChangeColorWhenClick();
+  addPreviousNextAction();
+  addContinueBookingAction();
   
