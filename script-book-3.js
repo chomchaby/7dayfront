@@ -45,12 +45,12 @@ var submitBtn = document.getElementsByClassName('next-btn');
 submitBtn[0].addEventListener('click',sendBooking);
 
 function sendBooking() {
+
     var theUrl = "http://demo.api.booking.vtneil.space/api/custom/book";
     for (const [student_id, seat_id] of pendingBookingSeat) {
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         xmlhttp.open("GET", theUrl);
         xmlhttp.send(JSON.stringify({ "user": student_id, "seat": seat_id}));
-        console.log(xmlhttp.responseText);
     }
 }
 

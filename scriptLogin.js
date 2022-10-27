@@ -18,17 +18,31 @@ async function loginn(){
           if (id == userid)
           localStorage.setItem('current_id',userid);
           localStorage.setItem('current_name',data[userid].name);
-          // var unique_id = getUniqueId(userid);
-          // localStorage.setItem('current_unique_id',unique_id);
+          var unique_id = getUniqueId(userid);
+          localStorage.setItem('current_unique_id',unique_id);
           window.location.href='index-home.html';
         }
   });
 }
-async function getUniqueId(user_id) {
-  // var url = "http://demo.api.booking.vtneil.space/api/users"+user_id;
-  // await fetch(url).then(function(response) {
-  //   return response.json();
-  // }).then(function(data) {
-      
-  // });
+function getUniqueId(user_id) {
+  $.ajax({
+    type: "POST",
+    url: "http://demo.api.booking.vtneil.space/api/custom/get_unique_id",
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    data: JSON.stringify({"user" : user_id}),
+    statusCode: {
+      200: function (response) {
+        alert('Successfully booking');
+        console.log(result)
+      }
+    },
+    dataType: "json",
+    contentType : "application/json"
+    
+  });
+
+
 }
+getUniqueId('001');
