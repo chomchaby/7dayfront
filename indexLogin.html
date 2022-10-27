@@ -29,5 +29,47 @@
       <br />
       <button type="summit" class="buttonn" onclick="loginn()">Login</button>
     </div>
+    <script>
+      async function loginn() {
+        localStorage.clear();
+        var userid = document.getElementById("inn").value;
+        $.ajax({
+          type: "GET",
+          url: "http://demo.api.booking.vtneil.space/api/users/" + userid,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          statusCode: {
+            200: function (response) {
+              alert("Successfully booking");
+              localStorage.setItem("current_id", userid);
+              localStorage.setItem("current_name", response.name);
+              getUniqueId(userid);
+            },
+          },
+          dataType: "json",
+          contentType: "application/json",
+        });
+        window.location.href = "index-home.html";
+      }
+
+      function getUniqueId(user_id) {
+        $.ajax({
+          type: "POST",
+          url: "http://demo.api.booking.vtneil.space/api/custom/get_unique_id",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          data: JSON.stringify({ user: user_id }),
+          statusCode: {
+            200: function (response) {
+              alert("Successfully login");
+            },
+          },
+          dataType: "json",
+          contentType: "application/json",
+        });
+      }
+    </script>
   </body>
 </html>
