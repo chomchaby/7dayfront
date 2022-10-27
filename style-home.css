@@ -16,6 +16,68 @@ body{
     padding: 20px;
     letter-spacing: 0px;
 }
+/* seat whatsup button */
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+.want-date-btn{
+    margin-top:8px;
+    background-color: #FFA07A;
+    width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+.want-concentrate-btn{
+    margin-top:8px;
+    background-color: #6689F2;
+    width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+.want-friend-btn{
+    margin-top:8px;
+    background-color: #D2691E;
+    width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+.want-study-friend-btn{
+    margin-top:8px;
+    background-color: #B22222;
+    width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+
+.want-entertain-btn{
+    margin-top:8px;
+    background-color: #FFD700;
+    width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+.want-normal-btn{
+    margin-top:8px;
+    background-color: #D2B48C;
+        width: 15px;
+    height:15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    border-color: black;
+}
+/* ---------------end ---------------*/
+
 .black-normal-button{
     background-color: #413b3b;
     color: #fff;
@@ -76,8 +138,8 @@ body{
     border-radius: 50px;
 }
 .row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     display: flex;
   }
 .column {
@@ -97,7 +159,7 @@ body{
   }
 .subheading-text{
     font-family:'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-top: 5px;
     margin-left: 5px;
