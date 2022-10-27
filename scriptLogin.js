@@ -42,7 +42,5 @@ function getUniqueId(user_id) {
     contentType : "application/json"
     
   });
-
-
+  
 }
-getUniqueId('001');
