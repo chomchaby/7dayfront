@@ -66,6 +66,7 @@
         b.addEventListener('click', function handleClick(event) {
           deleteSelectedFriendRow(b.id);
           selectedFriendList.delete(b.id);
+          console.log(selectedFriendList)
         });
     });
   }
@@ -78,6 +79,7 @@
     const form = document.getElementById('form-select-seat');
     form.addEventListener('submit',function(e) {
       e.preventDefault();
+      if (selectedFriendList.size==0) return;
       // set selected friend list to local storage
       var json = JSON.stringify(Array.from(selectedFriendList.entries()));
       localStorage.setItem('selected-friend-list',json);
@@ -88,12 +90,12 @@
   // ------------ coding begin here -------------------- //
   // booking step 1 - select friend (id : select-friend)
 
-
-    // get the old selection from local storage
-    selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')));
+    // SOMETHING WEONG HERE
+    // get the old selection from local storage if exists
+    if (localStorage.getItem('selected-friend-list')!=null) selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')));
         
-    // add user to selected-friend-map (just in case it does not have)
-    selectedFriendList.set(localStorage.getItem('current_id'),localStorage.getItem('current_name'));
+    // add user to selected-friend-map (just in case it there is no)
+    else selectedFriendList.set(localStorage.getItem('current_id'),localStorage.getItem('current_name'));
   
     // update and create selector for all friends
     updateFriendList();

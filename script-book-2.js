@@ -69,31 +69,22 @@
     for (const [key, value] of pendingBookingSeat) {
       var s = document.getElementById(value);
       if (key == currentPerson) {
-        s.style.background = "red";
+        s.style.background = "#8FBC8F";
       }
       else {
-        s.style.background = "navy";;
+        s.style.background = "#b4ee69";;
       }
     }
   }
     
   function updateCurrentPerson() {
     // update current person
-    var currentPerson = idArray[indexOfCurrentSelectedFriend];
+    currentPerson = idArray[indexOfCurrentSelectedFriend];
     document.getElementById("choosed-friend").textContent = selectedFriendList.get(currentPerson);
     // update current selected seat
     currentSelectedSeat = pendingBookingSeat.get(currentPerson);
   }
   
-  function updatePendingSeat() {
-    // store in pending seat map
-    if (currentSelectedSeat!=null) {
-      pendingBookingSeat.set(currentPerson,currentSelectedSeat);
-    }
-    else {
-      pendingBookingSeat.delete(currentPerson);
-    }
-  }
   function isOccupied(id) {
     for (var i = 0; i < bookedSeatArray.length; i++) {
         if (bookedSeatArray[i] == id) return true;
@@ -119,18 +110,21 @@
         // not select yet
         else if (currentSelectedSeat == null) {
           currentSelectedSeat = seat.id;
-          seat.style.background = "red";
+          pendingBookingSeat.set(currentPerson,currentSelectedSeat);
+          seat.style.background = "#8FBC8F";
         }
         // unselect seat
         else if (currentSelectedSeat == seat.id) {
           currentSelectedSeat = null;
+          pendingBookingSeat.delete(currentPerson);
           seat.style.background = "#EDE6E6";
         }
         // change seat
         else {
-          seat.style.background = "red";
+          seat.style.background = "#8FBC8F";
           document.getElementById(currentSelectedSeat).style.background = "#EDE6E6";
           currentSelectedSeat = seat.id;
+          pendingBookingSeat.set(currentPerson,currentSelectedSeat);
         }
       });
     });
@@ -138,14 +132,12 @@
   
   function addPreviousNextAction() {
     document.getElementById("previous-friend").addEventListener('click',function() {
-      updatePendingSeat();
       if (indexOfCurrentSelectedFriend==0) indexOfCurrentSelectedFriend = idArray.length-1;
       else indexOfCurrentSelectedFriend--;
       updateCurrentPerson();
       updateSeatColor();
     });
     document.getElementById("next-friend").addEventListener('click',function() {
-      updatePendingSeat();
       if (indexOfCurrentSelectedFriend==idArray.length-1) indexOfCurrentSelectedFriend = 0;
       else indexOfCurrentSelectedFriend++;
       updateCurrentPerson();

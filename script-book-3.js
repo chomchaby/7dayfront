@@ -7,16 +7,16 @@ function createSummaryTable() {
     var selectedFriendList = new Map(JSON.parse(localStorage.getItem('selected-friend-list')))
     let table = document.getElementById('seat-to-book-table');
     table.innerHTML = `<tr>
+                        <th>Seat Number</th>
                         <th>Student Id</th>
                         <th>Name</th>
-                        <th>Seat Number</th>
                         </tr>`;
     for (const [studentId, seatId] of pendingBookingSeat) {
         table.innerHTML += `
         <tr id='${studentId + " row"}'>
+            <td>${seatId}</td>
             <td>${studentId}</td>
             <td>${selectedFriendList.get(studentId)}</td>
-            <td>${seatId}</td>
         </tr>
         `
     }
@@ -33,8 +33,9 @@ function createSummaryTable() {
 // receive seat-list from previous page, convert to array 
 var pendingBookingSeat = JSON.parse(localStorage.getItem('selected-seat-map'));
 pendingBookingSeat = new Map(Object.entries(pendingBookingSeat));
-pendingBookingSeat = new Map([...pendingBookingSeat].sort())
-createSummaryTable();
+// sort by value(seat id) from low to high
+pendingBookingSeat = new Map([...pendingBookingSeat].sort((a, b) =>(a[1] > b[1] ? 1 : -1)));
+createSummaryTable(); 
 
 
 
