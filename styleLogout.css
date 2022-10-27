@@ -1,0 +1,15 @@
+h1{
+    font-family: 'centuury gothic', sans-serif;
+}
+.buttonn{
+    font-family: 'inter', sans-serif;
+    font-size: 1em;
+    padding: 20px 35px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #403e3d;
+    border-radius: 50px;
+}
