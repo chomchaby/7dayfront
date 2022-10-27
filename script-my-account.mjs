@@ -40,3 +40,8 @@ function undisableTxt() {
     document.getElementById("myCaption").disabled = false;
 }
 
+function logoutt(){
+    localStorage.clear();
+    window.location.href='indexlogout.html';
+  }
+
