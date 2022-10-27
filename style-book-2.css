@@ -11,8 +11,9 @@ body{
     font-family: 'Century Gothic', sans-serif; 
     margin: 0;
     text-align: center;
-    color: black;
-    background-color: #b4ee69;
+    color:white;
+    background-color: #0f3443;
+    background-image: linear-gradient(to right, #317765 0%, #0f3443 100%, #0f3443 100%);
     padding: 20px;
     letter-spacing: 0px;
 }

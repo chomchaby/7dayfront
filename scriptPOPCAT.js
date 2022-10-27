@@ -30,7 +30,18 @@ window.onload = function(){
         if(counter ===0){
             id.innerHTML = "Your score is "+ score;
             window.location.href = "IndexExtending.html";
+            /*updateExtend(score);
+            console.log(score);*/
         }
     },1000);
    
+}
+
+function updateExtend(time){
+    var userId = localStorage.getItem("current_id");
+    var urL = 'http://demo.api.booking.vtneil.space/api/users/'+userId;
+    $.get(urL ,function(data){
+        data.extend_time = time;
+    });
+    console.log(time);
 }
