@@ -170,6 +170,7 @@ table, td, th {
     border-radius: 10px;
     display: block;
     margin: 0 auto;
+    text-decoration: none;
   }
 
   .btn-green-grad:hover {
