@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 let countTime = new Date("Oct 27, 2022 18:30:00").getTime();
+||||||| 7f9587d
+let countTime = new Date("Oct 26, 2022 21:00:00").getTime();
+=======
+let countTime = new Date("Oct 27, 2022 18:10:00").getTime();
+>>>>>>> f96b1102013eb8abd2a06031333d27dc49837800
 
 let timer = setInterval(function(){
     var now = new Date().getTime();
