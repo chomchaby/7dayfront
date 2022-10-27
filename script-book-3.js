@@ -12,11 +12,15 @@ function createSummaryTable() {
                         <th>Name</th>
                         </tr>`;
     for (const [studentId, seatId] of pendingBookingSeat) {
+        var name = selectedFriendList.get(studentId)
+        if (studentId == localStorage.getItem('current_id')) {
+            name = localStorage.getItem('current_name')
+        }
         table.innerHTML += `
         <tr id='${studentId + " row"}'>
             <td>${seatId}</td>
             <td>${studentId}</td>
-            <td>${selectedFriendList.get(studentId)}</td>
+            <td>${name}</td>
         </tr>
         `
     }
@@ -37,25 +41,15 @@ pendingBookingSeat = new Map(Object.entries(pendingBookingSeat));
 pendingBookingSeat = new Map([...pendingBookingSeat].sort((a, b) =>(a[1] > b[1] ? 1 : -1)));
 createSummaryTable(); 
 
+var submitBtn = document.getElementsByClassName('next-btn');
+submitBtn[0].addEventListener('click',sendBooking);
 
+function sendBooking() {
+    var theUrl = "http://demo.api.booking.vtneil.space/api/custom/book";
+    for (const [student_id, seat_id] of pendingBookingSeat) {
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        xmlhttp.open("GET", theUrl);
+        xmlhttp.send(JSON.stringify({ "user": student_id, "seat": seat_id}));
+    }
+}
 
-
-var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-var theUrl = "http://demo.api.booking.vtneil.space/api/users/001";
-xmlhttp.open("POST", theUrl);
-// xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-xmlhttp.send(JSON.stringify({ "current_seat_id": "F1-C64"}));
-
-// var data = new Map();
-// data.set("current_seat_id","F1-C64");
-// fetch('http://demo.api.booking.vtneil.space/api/users/001', {
-//    method: 'POSTman',
-//    body: JSON.stringify(data),
-//  })
-//  .then(response => response.json())
-//  .then(data => {
-//    console.log('Success:', data);
-//  })
-//  .catch((error) => {
-//    console.error('Error:', error);
-//  });
